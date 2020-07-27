@@ -9,7 +9,7 @@ img = Image.open(image_path)
 width, height = img.size
 aspect_ratio = height/width
 new_width = 120
-new_height = aspect_ratio * new_width * 0.55
+new_height = aspect_ratio * new_width * 0.5
 img = img.resize((new_width, int(new_height)))
 
 # new size of image
@@ -32,5 +32,5 @@ ascii_image = "\n".join(ascii_image)
 print(ascii_image)
 
 # write to a text file
-with open("ascii_image.txt", "w") as f:
+with open(sys.argv[2], "w") as f:
 	f.write(ascii_image)
